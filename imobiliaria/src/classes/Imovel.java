@@ -23,7 +23,7 @@ return localizacao.getCidade();
 }
 
 public String getBairro() {
-	return localizacao.getCidade();
+	return localizacao.getBairro();
 }
 
 public int getCodigo() {

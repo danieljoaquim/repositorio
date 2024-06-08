@@ -39,7 +39,7 @@ public class Imobiliaria {
 
 		System.out.println("Qual a cidade que o imóvel se localiza?");
 		String cidade = sc.nextLine();
-
+	
 		System.out.println("Qual o bairo que o imóvel se localiza?");
 		String bairro = sc.nextLine();
 
@@ -64,6 +64,7 @@ public class Imobiliaria {
 			System.out.println("Área total do imóvel :" + elemento.getAreaTotal());
 			System.out.println("Valor: " + elemento.getPreco());
 			System.out.println("Cidade: " + elemento.getCidade());
+			System.out.println("Bairro: " + elemento.getBairro());
 			System.out.println();
 
 		}
@@ -198,7 +199,7 @@ public class Imobiliaria {
 			}
 
 			String cidade;
-			System.out.println("Qual a cidade escolhida? Digite da forma que está escrita na tela.");
+			System.out.println("Qual a cidade escolhida?");
 			sc.nextLine();
 			cidade = sc.nextLine();
 
@@ -225,10 +226,27 @@ public class Imobiliaria {
 
 			List<String> listaBairros = new ArrayList<>(bairros);
 
-			for (String integrante : listaBairros) {
-				System.out.println(integrante);
+			for (String integrante2 : listaBairros) {
+				System.out.println(integrante2);
 			}
+			
+			String bairro;
+			System.out.println("Qual o bairro escolhido?");
+			sc.nextLine();
+			bairro = sc.nextLine();
+
+			for (Imovel elemento : listaDeImoveis) {
+				if (elemento.getBairro().equalsIgnoreCase(bairro)) {
+					System.out.println("Código do imóvel:" + elemento.getCodigo());
+					System.out.println("Número de quartos: " + elemento.getNumeroQuartos());
+					System.out.println("Área construída do imóvel: " + elemento.getAreaConstruida());
+					System.out.println("Área total do imóvel :" + elemento.getAreaTotal());
+					System.out.println("Valor: " + elemento.getPreco());
+					System.out.println("Cidade: " + elemento.getCidade());
+					System.out.println();
+				}
 
 		}
 	}
+}
 }
