@@ -2,6 +2,7 @@ package classes;
 
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 import java.util.Set;
@@ -39,7 +40,7 @@ public class Imobiliaria {
 
 		System.out.println("Qual a cidade que o imóvel se localiza?");
 		String cidade = sc.nextLine();
-	
+
 		System.out.println("Qual o bairo que o imóvel se localiza?");
 		String bairro = sc.nextLine();
 
@@ -229,7 +230,7 @@ public class Imobiliaria {
 			for (String integrante2 : listaBairros) {
 				System.out.println(integrante2);
 			}
-			
+
 			String bairro;
 			System.out.println("Qual o bairro escolhido?");
 			sc.nextLine();
@@ -246,7 +247,75 @@ public class Imobiliaria {
 					System.out.println();
 				}
 
+			}
 		}
 	}
-}
+
+	public void removerImovel(Scanner sc) {
+		System.out.println("Aqui estão os imóveis que podem ser removidos:");
+		System.out.println();
+		int indice2 = 0;
+		for (Imovel elemento : listaDeImoveis) {
+
+			indice2++;
+
+			System.out.println("Imóvel " + indice2);
+			System.out.println("Código do imóvel:" + elemento.getCodigo());
+			System.out.println("Número de quartos: " + elemento.getNumeroQuartos());
+			System.out.println("Área construída do imóvel: " + elemento.getAreaConstruida());
+			System.out.println("Área total do imóvel :" + elemento.getAreaTotal());
+			System.out.println("Valor: " + elemento.getPreco());
+			System.out.println("Cidade: " + elemento.getCidade());
+			System.out.println("Bairro: " + elemento.getBairro());
+			System.out.println();
+		}
+
+		int removeTemp;
+
+		System.out.println("Qual imóvel você deseja remover? Digite o código do imóvel.");
+		removeTemp = sc.nextInt();
+		 
+		Iterator<Imovel> iterador = listaDeImoveis.iterator();
+		    while (iterador.hasNext()) {
+		        Imovel imovel = iterador.next();
+		        if (imovel.getCodigo() == removeTemp) {
+		            iterador.remove(); 
+		            break; 
+		        }
+		    }
+
+		System.out.println("Lista de imóveis atualizada:");
+		System.out.println();
+		indice2 = 0;
+		for (Imovel elemento : listaDeImoveis) {
+
+			indice2++;
+
+			System.out.println("Imóvel " + indice2);
+			System.out.println("Código do imóvel:" + elemento.getCodigo());
+			System.out.println("Número de quartos: " + elemento.getNumeroQuartos());
+			System.out.println("Área construída do imóvel: " + elemento.getAreaConstruida());
+			System.out.println("Área total do imóvel :" + elemento.getAreaTotal());
+			System.out.println("Valor: " + elemento.getPreco());
+			System.out.println("Cidade: " + elemento.getCidade());
+			System.out.println("Bairro: " + elemento.getBairro());
+			System.out.println();
+		}
+
+	}
+
+	public void modificarImovel(Scanner sc) {
+		System.out.println("Qual imóvel deseja modificar?");
+		int codigoDesejado = sc.nextInt();
+
+		for (Imovel imovel : listaDeImoveis) {
+			if (codigoDesejado == imovel.getCodigo()) {
+
+				System.out.println("Informe o valor do imovel");
+				float precoAtualizado = sc.nextFloat();
+				imovel.setPreco(precoAtualizado);
+			}
+		}
+	}
+
 }

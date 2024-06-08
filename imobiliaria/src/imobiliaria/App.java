@@ -11,6 +11,7 @@ public class App {
     	imobiliaria.adicionaImovel(sc);
     	imobiliaria.listagemImoveis();
     	imobiliaria.listagemPorCondicao(sc);
-    	
+    	imobiliaria.modificarImovel(sc);
+    	imobiliaria.removerImovel(sc);
     }
 }
