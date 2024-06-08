@@ -7,6 +7,7 @@ import java.util.Scanner;
 import java.util.Set;
 
 public class Imobiliaria {
+
 	private List<Imovel> listaDeImoveis;
 
 	public Imobiliaria() {
@@ -181,7 +182,8 @@ public class Imobiliaria {
 				System.out.println();
 			}
 		} else if (opcao == 4) {
-			// HashSet é uma ferramenta da linguagem que não permite adição de informação
+			// HashSet é uma ferramenta da linguagem Java que não permite adição de
+			// informação
 			// duplicada em uma coleção
 			Set<String> cidades = new HashSet<>();
 
@@ -195,7 +197,26 @@ public class Imobiliaria {
 				System.out.println(integrante);
 			}
 
-		} else if (opcao == 5) {
+			String cidade;
+			System.out.println("Qual a cidade escolhida? Digite da forma que está escrita na tela.");
+			sc.nextLine();
+			cidade = sc.nextLine();
+
+			for (Imovel elemento : listaDeImoveis) {
+				if (elemento.getCidade().equalsIgnoreCase(cidade)) {
+					System.out.println("Código do imóvel:" + elemento.getCodigo());
+					System.out.println("Número de quartos: " + elemento.getNumeroQuartos());
+					System.out.println("Área construída do imóvel: " + elemento.getAreaConstruida());
+					System.out.println("Área total do imóvel :" + elemento.getAreaTotal());
+					System.out.println("Valor: " + elemento.getPreco());
+					System.out.println("Cidade: " + elemento.getCidade());
+					System.out.println();
+				}
+			}
+
+		}
+
+		else if (opcao == 5) {
 			Set<String> bairros = new HashSet<>();
 
 			for (Imovel elemento : listaDeImoveis) {
