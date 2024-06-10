@@ -14,10 +14,10 @@ public class App {
 		
 		System.out.println("Bem vindo à imobiliária!");
 		System.out.println();
-		System.out.println("==========================");
-		System.out.println();
-		
+				
 		do {
+			System.out.println("==========================");
+			System.out.println();
 			System.out.println("Digite 1 para adicionar um novo imóvel;");
 			System.out.println();
 			System.out.println("Digite 2 para listar os imóveis disponíveis;");

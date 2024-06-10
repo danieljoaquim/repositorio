@@ -33,7 +33,7 @@ public class Imobiliaria {
 		System.out.println("Informe o valor do imovel");
 		float preco = sc.nextFloat();
 
-		System.out.println("Informa o tipo do imóvel");
+		System.out.println("Informa o tipo do imóvel, sendo 1 para apartamento e 0 para casa.");
 		int tipo = sc.nextInt();
 
 		sc.nextLine(); // Evita erro de leitura nas próximas linhas
@@ -64,6 +64,7 @@ public class Imobiliaria {
 			System.out.println("Área construída do imóvel: " + elemento.getAreaConstruida());
 			System.out.println("Área total do imóvel :" + elemento.getAreaTotal());
 			System.out.println("Valor: " + elemento.getPreco());
+			System.out.println("Tipo do imóvel: " + elemento.getTipo());
 			System.out.println("Cidade: " + elemento.getCidade());
 			System.out.println("Bairro: " + elemento.getBairro());
 			System.out.println();
@@ -96,7 +97,10 @@ public class Imobiliaria {
 					System.out.println("Área construída do imóvel: " + elemento.getAreaConstruida());
 					System.out.println("Área total do imóvel :" + elemento.getAreaTotal());
 					System.out.println("Valor: " + elemento.getPreco());
+					System.out.println("Tipo do imóvel: " + elemento.getTipo());
 					System.out.println("Cidade: " + elemento.getCidade());
+					System.out.println("Bairro: " + elemento.getBairro());
+					System.out.println();
 				}
 
 			}
@@ -105,9 +109,9 @@ public class Imobiliaria {
 
 			System.out.println("Qual a faixa de valor que você procura?");
 			System.out.println("1 -> 0 - 100.000");
-			System.out.println("2 -> 100.001 - 200.000");
-			System.out.println("3 -> 200.001 - 500.000");
-			System.out.println("4 -> Maior do que 500.000");
+			System.out.println("2 -> 100.000 - 200.000");
+			System.out.println("3 -> 200.000 - 500.000");
+			System.out.println("4 -> A partir de 500.000");
 
 			int escolha = 0;
 
@@ -121,33 +125,40 @@ public class Imobiliaria {
 						System.out.println("Área construída do imóvel: " + elemento.getAreaConstruida());
 						System.out.println("Área total do imóvel :" + elemento.getAreaTotal());
 						System.out.println("Valor: " + elemento.getPreco());
+						System.out.println("Tipo do imóvel: " + elemento.getTipo());
 						System.out.println("Cidade: " + elemento.getCidade());
+						System.out.println("Bairro: " + elemento.getBairro());
 						System.out.println();
 					}
 				}
 
 			} else if (escolha == 2) {
 				for (Imovel elemento : listaDeImoveis) {
-					if (elemento.getPreco() > 10000 && elemento.getPreco() <= 200000) {
+					if (elemento.getPreco() > 100000 && elemento.getPreco() < 200000) {
+						
 						System.out.println("Código do imóvel:" + elemento.getCodigo());
 						System.out.println("Número de quartos: " + elemento.getNumeroQuartos());
 						System.out.println("Área construída do imóvel: " + elemento.getAreaConstruida());
 						System.out.println("Área total do imóvel :" + elemento.getAreaTotal());
 						System.out.println("Valor: " + elemento.getPreco());
+						System.out.println("Tipo do imóvel: " + elemento.getTipo());
 						System.out.println("Cidade: " + elemento.getCidade());
+						System.out.println("Bairro: " + elemento.getBairro());
 						System.out.println();
 					}
 				}
 
 			} else if (escolha == 3) {
 				for (Imovel elemento : listaDeImoveis) {
-					if (elemento.getPreco() > 200000 && elemento.getPreco() <= 500000) {
+					if (elemento.getPreco() > 200000 && elemento.getPreco() < 500000) {
 						System.out.println("Código do imóvel:" + elemento.getCodigo());
 						System.out.println("Número de quartos: " + elemento.getNumeroQuartos());
 						System.out.println("Área construída do imóvel: " + elemento.getAreaConstruida());
 						System.out.println("Área total do imóvel :" + elemento.getAreaTotal());
 						System.out.println("Valor: " + elemento.getPreco());
+						System.out.println("Tipo do imóvel: " + elemento.getTipo());
 						System.out.println("Cidade: " + elemento.getCidade());
+						System.out.println("Bairro: " + elemento.getBairro());
 						System.out.println();
 
 					}
@@ -162,7 +173,9 @@ public class Imobiliaria {
 						System.out.println("Área construída do imóvel: " + elemento.getAreaConstruida());
 						System.out.println("Área total do imóvel :" + elemento.getAreaTotal());
 						System.out.println("Valor: " + elemento.getPreco());
+						System.out.println("Tipo do imóvel: " + elemento.getTipo());
 						System.out.println("Cidade: " + elemento.getCidade());
+						System.out.println("Bairro: " + elemento.getBairro());
 						System.out.println();
 					}
 				}
@@ -176,11 +189,14 @@ public class Imobiliaria {
 			for (Imovel elemento : listaDeImoveis) {
 				if (quarto <= elemento.getNumeroQuartos())
 					System.out.println("Código do imóvel:" + elemento.getCodigo());
+				System.out.println("Código do imóvel:" + elemento.getCodigo());
 				System.out.println("Número de quartos: " + elemento.getNumeroQuartos());
 				System.out.println("Área construída do imóvel: " + elemento.getAreaConstruida());
 				System.out.println("Área total do imóvel :" + elemento.getAreaTotal());
 				System.out.println("Valor: " + elemento.getPreco());
+				System.out.println("Tipo do imóvel: " + elemento.getTipo());
 				System.out.println("Cidade: " + elemento.getCidade());
+				System.out.println("Bairro: " + elemento.getBairro());
 				System.out.println();
 			}
 		} else if (opcao == 4) {
@@ -211,7 +227,9 @@ public class Imobiliaria {
 					System.out.println("Área construída do imóvel: " + elemento.getAreaConstruida());
 					System.out.println("Área total do imóvel :" + elemento.getAreaTotal());
 					System.out.println("Valor: " + elemento.getPreco());
+					System.out.println("Tipo do imóvel: " + elemento.getTipo());
 					System.out.println("Cidade: " + elemento.getCidade());
+					System.out.println("Bairro: " + elemento.getBairro());
 					System.out.println();
 				}
 			}
@@ -243,7 +261,9 @@ public class Imobiliaria {
 					System.out.println("Área construída do imóvel: " + elemento.getAreaConstruida());
 					System.out.println("Área total do imóvel :" + elemento.getAreaTotal());
 					System.out.println("Valor: " + elemento.getPreco());
+					System.out.println("Tipo do imóvel: " + elemento.getTipo());
 					System.out.println("Cidade: " + elemento.getCidade());
+					System.out.println("Bairro: " + elemento.getBairro());
 					System.out.println();
 				}
 
