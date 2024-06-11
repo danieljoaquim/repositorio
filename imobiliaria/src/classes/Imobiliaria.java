@@ -187,7 +187,7 @@ public class Imobiliaria {
 			quarto = sc.nextInt();
 
 			for (Imovel elemento : listaDeImoveis) {
-				if (quarto <= elemento.getNumeroQuartos())
+				if (elemento.getNumeroQuartos() > quarto || quarto == elemento.getNumeroQuartos()) {
 					System.out.println("Código do imóvel:" + elemento.getCodigo());
 				System.out.println("Código do imóvel:" + elemento.getCodigo());
 				System.out.println("Número de quartos: " + elemento.getNumeroQuartos());
@@ -198,6 +198,7 @@ public class Imobiliaria {
 				System.out.println("Cidade: " + elemento.getCidade());
 				System.out.println("Bairro: " + elemento.getBairro());
 				System.out.println();
+			}
 			}
 		} else if (opcao == 4) {
 			// HashSet é uma ferramenta da linguagem Java que não permite adição de

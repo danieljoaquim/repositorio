@@ -1,7 +1,7 @@
 package classes;
 
 public class Endereco {
-String cidade, bairro;
+private String cidade, bairro;
 
 public Endereco(String cidade, String bairro) {
 
